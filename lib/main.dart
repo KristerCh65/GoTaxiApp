@@ -8,9 +8,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Login Page",
-      theme: ThemeData(primarySwatch: Colors.orange),
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      theme: ThemeData(visualDensity: VisualDensity.adaptivePlatformDensity),
+      initialRoute: LoginPage.id,
+      routes: {
+        LoginPage.id: (context) => LoginPage(),
+      },
     );
   }
 }
