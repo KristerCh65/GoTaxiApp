@@ -18,8 +18,8 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Flexible(
                 child: Image.asset(
-                  'images/GoTaxi.png',
-                  height: 50,
+                  'assets/GoTaxi.png',
+                  height: 250.0,
                 ),
               ),
               SizedBox(
