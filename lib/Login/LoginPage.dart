@@ -94,6 +94,8 @@ Widget bottomLogin() {
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Colors.amber),
         ),
-        onPressed: () {});
+        onPressed: () {
+          Navigator.of(context).pushNamed('/UsuarioPage');
+        });
   });
 }
