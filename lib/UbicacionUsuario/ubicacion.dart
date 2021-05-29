@@ -32,18 +32,6 @@ class _UbicacionState extends State<Ubicacion> {
         backgroundColor: Colors.amber,
       ),
       body: 
-      // Center(
-      //   child: Column(
-      //     children: [
-      //       SizedBox(height: 15.0),
-      //       Text(
-      //         "Selecciona tu ubicacion de partida",
-      //         style: TextStyle(
-      //           fontSize: 16.0,
-      //           fontWeight: FontWeight.bold,
-      //           color: Colors.black87,
-      //         ),
-      //       ),
       Stack(alignment: Alignment.center, 
               children: [
                 GoogleMap(
@@ -91,9 +79,6 @@ class _UbicacionState extends State<Ubicacion> {
                   ),
                 )
               ]),
-      //     ],
-      //   ),
-      // ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
         foregroundColor: Colors.black,
