@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gotaxiapp/UbicacionUsuario/ubicacion.dart';
 import 'Login/LoginPage.dart';
 
 void main() => runApp(MyApp());
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
       initialRoute: LoginPage.id,
       routes: {
         LoginPage.id: (context) => LoginPage(),
+        Ubicacion.id: (context) => Ubicacion(),
       },
     );
   }
