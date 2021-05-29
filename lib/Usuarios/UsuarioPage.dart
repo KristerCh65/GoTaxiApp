@@ -36,6 +36,10 @@ class Usuarios extends StatelessWidget {
               height: 15.0,
             ),
             passwordUser(),
+            SizedBox(
+              height: 30.0,
+            ),
+            bottomRegister()
           ],
         ),
       ),
@@ -130,6 +134,29 @@ Widget passwordUser() {
         onChanged: (value) {},
       ),
     );
+  });
+}
+
+Widget bottomRegister() {
+  return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
+    return ElevatedButton(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
+          child: Text(
+            'Registrarse',
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+          ),
+        ),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(Colors.amber),
+        ),
+        onPressed: () {
+          Navigator.of(context).pushNamed('/LoginPage');
+        });
   });
 }
 

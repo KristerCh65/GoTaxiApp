@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(visualDensity: VisualDensity.adaptivePlatformDensity),
       initialRoute: LoginPage.id,
       routes: <String, WidgetBuilder>{
-        LoginPage.id: (context) => LoginPage(),
+        '/LoginPage': (BuildContext context) => new LoginPage(),
         '/UsuarioPage': (BuildContext context) => new Usuarios()
       },
     );
