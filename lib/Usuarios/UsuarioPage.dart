@@ -1,46 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:gotaxiapp/UbicacionUsuario/UbicacionesPage.dart';
 
-class Usuarios extends StatelessWidget {
-  DateTime _dateTime;
+class UsuarioPage extends StatefulWidget {
+  static String id = "Usuario Page";
 
   @override
+  _UsuarioPageState createState() => _UsuarioPageState();
+}
+
+class _UsuarioPageState extends State<UsuarioPage> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: new AppBar(
-        title: Text(
-          'Registro Usuario',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black87),
+    return SafeArea(
+      child: Scaffold(
+        appBar: new AppBar(
+          title: Text(
+            'Registro Usuario',
+            style:
+                TextStyle(fontWeight: FontWeight.bold, color: Colors.black87),
+          ),
+          backgroundColor: Colors.amber,
         ),
-        backgroundColor: Colors.amber,
-      ),
-      body: Center(
-        child: new Column(
-          children: [
-            SizedBox(
-              height: 15.0,
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 15.0,
+                ),
+                nameUser(),
+                SizedBox(
+                  height: 15.0,
+                ),
+                surnameUser(),
+                SizedBox(
+                  height: 15.0,
+                ),
+                phoneUser(),
+                SizedBox(
+                  height: 15.0,
+                ),
+                emailUser(),
+                SizedBox(
+                  height: 15.0,
+                ),
+                passwordUser(),
+                SizedBox(
+                  height: 15.0,
+                ),
+                bottomRegister()
+              ],
             ),
-            nameUser(),
-            SizedBox(
-              height: 15.0,
-            ),
-            surnameUser(),
-            SizedBox(
-              height: 15.0,
-            ),
-            phoneUser(),
-            SizedBox(
-              height: 15.0,
-            ),
-            emailUser(),
-            SizedBox(
-              height: 15.0,
-            ),
-            passwordUser(),
-            SizedBox(
-              height: 30.0,
-            ),
-            bottomRegister()
-          ],
+          ),
         ),
       ),
     );
@@ -50,14 +61,21 @@ class Usuarios extends StatelessWidget {
 Widget nameUser() {
   return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0),
+      padding: EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(
         keyboardType: TextInputType.name,
         decoration: InputDecoration(
-          icon: Icon(Icons.account_circle),
+          icon: Icon(
+            Icons.account_circle,
+            color: Colors.amber,
+          ),
           hintText: 'Doe',
           labelText: 'Nombre',
-          hintStyle: TextStyle(color: Colors.grey),
+          labelStyle: TextStyle(
+            color: Colors.black,
+          ),
+          focusedBorder:
+              UnderlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
         ),
         onChanged: (value) {},
       ),
@@ -68,14 +86,21 @@ Widget nameUser() {
 Widget surnameUser() {
   return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0),
+      padding: EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(
         keyboardType: TextInputType.name,
         decoration: InputDecoration(
-          icon: Icon(Icons.account_circle_outlined),
+          icon: Icon(
+            Icons.account_circle_outlined,
+            color: Colors.amber,
+          ),
           hintText: 'Doe',
           labelText: 'Apellido',
-          hintStyle: TextStyle(color: Colors.grey),
+          labelStyle: TextStyle(
+            color: Colors.black,
+          ),
+          focusedBorder:
+              UnderlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
         ),
         onChanged: (value) {},
       ),
@@ -86,14 +111,21 @@ Widget surnameUser() {
 Widget phoneUser() {
   return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0),
+      padding: EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(
         keyboardType: TextInputType.phone,
         decoration: InputDecoration(
-          icon: Icon(Icons.phone_android_outlined),
+          icon: Icon(
+            Icons.phone_android_outlined,
+            color: Colors.amber,
+          ),
           hintText: '+504 0000-0000',
           labelText: 'Telefono',
-          hintStyle: TextStyle(color: Colors.black12),
+          labelStyle: TextStyle(
+            color: Colors.black,
+          ),
+          focusedBorder:
+              UnderlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
         ),
         onChanged: (value) {},
       ),
@@ -104,14 +136,21 @@ Widget phoneUser() {
 Widget emailUser() {
   return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0),
+      padding: EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
-          icon: Icon(Icons.email_outlined),
+          icon: Icon(
+            Icons.email_outlined,
+            color: Colors.amber,
+          ),
           hintText: 'ejemplo@correo.com',
           labelText: 'Correo Electronico',
-          hintStyle: TextStyle(color: Colors.black12),
+          labelStyle: TextStyle(
+            color: Colors.black,
+          ),
+          focusedBorder:
+              UnderlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
         ),
         onChanged: (value) {},
       ),
@@ -122,14 +161,22 @@ Widget emailUser() {
 Widget passwordUser() {
   return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0),
+      padding: EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(
         keyboardType: TextInputType.visiblePassword,
         obscureText: true,
         decoration: InputDecoration(
-          icon: Icon(Icons.lock),
-          hintText: 'Contraseña',
+          icon: Icon(
+            Icons.lock,
+            color: Colors.amber,
+          ),
+          hintText: '***********',
           labelText: 'Contraseña',
+          labelStyle: TextStyle(
+            color: Colors.black,
+          ),
+          focusedBorder:
+              UnderlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
         ),
         onChanged: (value) {},
       ),
@@ -155,14 +202,8 @@ Widget bottomRegister() {
           backgroundColor: MaterialStateProperty.all(Colors.amber),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed('/LoginPage');
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => Ubicacion()));
         });
-  });
-}
-
-Widget typeUser() {
-  return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
-    return Container(
-        padding: EdgeInsets.symmetric(horizontal: 30.0), child: Column());
   });
 }

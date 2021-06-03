@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gotaxiapp/Usuarios/UsuarioPage.dart';
 import 'Login/LoginPage.dart';
+import 'UbicacionUsuario/UbicacionesPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(visualDensity: VisualDensity.adaptivePlatformDensity),
       initialRoute: LoginPage.id,
       routes: <String, WidgetBuilder>{
-        '/LoginPage': (BuildContext context) => new LoginPage(),
-        '/UsuarioPage': (BuildContext context) => new Usuarios()
+        LoginPage.id: (context) => LoginPage(),
+        UsuarioPage.id: (context) => UsuarioPage(),
+        Ubicacion.id: (context) => Ubicacion(),
       },
     );
   }
