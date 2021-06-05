@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class RetroalimentacionPage extends StatefulWidget {
   static String id = "Retroalimentacion";
@@ -21,26 +22,32 @@ class _RetroAlimentacionPageState extends State<RetroalimentacionPage> {
         backgroundColor: Colors.amber,
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 15,
-            ),
-            imagePerfil(),
-            SizedBox(
-              height: 15,
-            ),
-            userTXT(),
-            SizedBox(
-              height: 35,
-            ),
-            commentTextArea(),
-            SizedBox(
-              height: 15,
-            ),
-            bottomRetroalimentacion(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 15,
+              ),
+              imagePerfil(),
+              SizedBox(
+                height: 15,
+              ),
+              userTXT(),
+              SizedBox(
+                height: 35,
+              ),
+              commentTextArea(),
+              SizedBox(
+                height: 15,
+              ),
+              ratingStar(),
+              SizedBox(
+                height: 15,
+              ),
+              bottomRetroalimentacion(),
+            ],
+          ),
         ),
       ),
     ));
@@ -109,6 +116,14 @@ Widget ratingStar() {
   return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
+      child: SmoothStarRating(
+        allowHalfRating: false,
+        onRated: (v) {},
+        starCount: 5,
+        size: 40.0,
+        color: Colors.amber,
+        borderColor: Colors.black,
+      ),
     );
   });
 }

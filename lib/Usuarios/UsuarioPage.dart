@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gotaxiapp/Retroalimentacion/RetroalimentacionPage.dart';
 import 'package:gotaxiapp/UbicacionUsuario/ubicacion.dart';
 
 class UsuarioPage extends StatefulWidget {
@@ -202,8 +203,8 @@ Widget bottomRegister() {
           backgroundColor: MaterialStateProperty.all(Colors.amber),
         ),
         onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => Ubicacion()));
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => RetroalimentacionPage()));
         });
   });
 }
