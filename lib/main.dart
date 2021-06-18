@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gotaxiapp/Conductor/ConductorPage.dart';
 import 'package:gotaxiapp/RegistroVehiculo/RegistroVehiculoPage.dart';
 import 'package:gotaxiapp/Retroalimentacion/RetroalimentacionPage.dart';
+import 'package:gotaxiapp/TomaViaje/TomarViajePage.dart';
 import 'package:gotaxiapp/UbicacionUsuario/ubicacion.dart';
 import 'package:gotaxiapp/Usuarios/UsuarioPage.dart';
 import 'Login/LoginPage.dart';
@@ -21,6 +23,8 @@ class MyApp extends StatelessWidget {
         'ubicacion': (context) => Ubicacion(),
         'registroVehiculo': (context) => RegistroVehiculoPage(),
         'retroalimentacion': (context) => RetroalimentacionPage(),
+        'conductor': (context) => ConductorPage(),
+        'tomarviaje': (context) => TomarViajePage(),
       },
     );
   }

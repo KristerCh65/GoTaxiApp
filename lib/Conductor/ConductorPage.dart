@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gotaxiapp/UbicacionUsuario/ubicacion.dart';
+import 'package:gotaxiapp/TomaViaje/TomarViajePage.dart';
 
 class ConductorPage extends StatefulWidget {
   static String id = "Conductor";
@@ -102,11 +103,13 @@ class _ConductorPageState extends State<ConductorPage> {
 
 Widget numberperson() {
   return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
+    TextEditingController _textocontroller = TextEditingController(text: "");
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 30.0,
       ),
       child: TextField(
+        controller: _textocontroller,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
           icon: Icon(Icons.account_circle_outlined),
@@ -126,7 +129,7 @@ Widget bottomstartinglocation() {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 15.0),
           child: Text(
-            'Ubicacion de Partida',
+            'Tomar Viaje',
             style: TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,
@@ -139,7 +142,7 @@ Widget bottomstartinglocation() {
         ),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => Ubicacion()));
+              .push(MaterialPageRoute(builder: (context) => TomarViajePage()));
         });
   });
 }
@@ -181,7 +184,7 @@ Widget bottomstartinglocations() {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 15.0),
           child: Text(
-            'Ubicacion de Partida',
+            'Tomar Viaje',
             style: TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,
@@ -194,7 +197,7 @@ Widget bottomstartinglocations() {
         ),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => Ubicacion()));
+              .push(MaterialPageRoute(builder: (context) => TomarViajePage()));
         });
   });
 }
@@ -236,7 +239,7 @@ Widget bottomstartinglocationd() {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 60.0, vertical: 15.0),
           child: Text(
-            'Ubicacion de Partida',
+            'Tomar Viaje',
             style: TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,
@@ -249,7 +252,7 @@ Widget bottomstartinglocationd() {
         ),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => Ubicacion()));
+              .push(MaterialPageRoute(builder: (context) => TomarViajePage()));
         });
   });
 }
