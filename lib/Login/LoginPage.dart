@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:gotaxiapp/Usuarios/UsuarioPage.dart';
 
 class LoginPage extends StatefulWidget {
-  static String id = "Login Page";
+  LoginPage({Key key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String _email;
+  String _pass;
+
+  GlobalKey<FormState> formKey = GlobalKey();
+
+  submit() {
+    final isLogin = formKey.currentState.validate();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Center(
+        body: Form(
+          key: formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -32,11 +41,11 @@ class _LoginPageState extends State<LoginPage> {
               ),
               passwordTextField(),
               SizedBox(
-                height: 20.0,
+                height: 15.0,
               ),
               bottomLogin(),
               SizedBox(
-                height: 20.0,
+                height: 15.0,
               ),
               bottomRegister()
             ],
@@ -45,13 +54,11 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-}
 
-Widget userTextField() {
-  return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
+  Widget userTextField() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
-      child: TextField(
+      child: TextFormField(
         keyboardType: TextInputType.emailAddress,
         autofocus: true,
         decoration: InputDecoration(
@@ -68,19 +75,25 @@ Widget userTextField() {
           focusedBorder:
               UnderlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
         ),
+        validator: (correo) {
+          if (!correo.contains('@')) {
+            return "invalid email";
+          }
+          return null;
+        },
+        onSaved: (correo) {
+          _email = correo;
+        },
         onChanged: (value) {},
       ),
     );
-  });
-}
+  }
 
-Widget passwordTextField() {
-  return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
+  Widget passwordTextField() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
-      child: TextField(
+      child: TextFormField(
         keyboardType: TextInputType.visiblePassword,
-        obscureText: true,
         decoration: InputDecoration(
           icon: Icon(
             Icons.lock,
@@ -95,14 +108,20 @@ Widget passwordTextField() {
           focusedBorder:
               UnderlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
         ),
-        onChanged: (value) {},
+        validator: (contra) {
+          if (!contra.contains('')) {
+            return "invalid password";
+          }
+          return null;
+        },
+        onSaved: (contra) {
+          _pass = contra;
+        },
       ),
     );
-  });
-}
+  }
 
-Widget bottomLogin() {
-  return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
+  Widget bottomLogin() {
     return ElevatedButton(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
@@ -118,31 +137,35 @@ Widget bottomLogin() {
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Colors.amber),
         ),
-        onPressed: () {});
-  });
-}
-
-Widget bottomRegister() {
-  return StreamBuilder(builder: (BuildContext context, AsyncSnapshot snapshot) {
-    return ElevatedButton(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 87.0, vertical: 15.0),
-          child: Text(
-            'Registrarse',
-            style: TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.amber,
-            ),
-          ),
-        ),
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.black),
-        ),
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => UsuarioPage(),
-          ));
+          this.submit();
         });
-  });
+  }
+
+  Widget bottomRegister() {
+    return Container(
+        padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Unirse ahora?',
+              style: TextStyle(
+                fontSize: 14.0,
+                color: Colors.black87,
+              ),
+            ),
+            TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'user');
+                },
+                child: Text('Crear Usuario',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    )))
+          ],
+        ));
+  }
 }

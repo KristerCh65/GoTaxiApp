@@ -1,10 +1,8 @@
-import 'dart:ffi';
-
 class Retroalimentacion {
   int _id;
   String _nombre;
   String _comentario;
-  Double _puntuacion;
+  double _puntuacion;
 
   Retroalimentacion(this._id, this._nombre, this._comentario, this._puntuacion);
   //set
@@ -20,7 +18,7 @@ class Retroalimentacion {
     this._comentario = comentario;
   }
 
-  set puntuacion(Double puntuacion) {
+  set puntuacion(double puntuacion) {
     this._puntuacion = puntuacion;
   }
 
@@ -28,5 +26,5 @@ class Retroalimentacion {
   int get id => this._id;
   String get nombre => this._nombre;
   String get comentario => this._comentario;
-  Double get puntuacion => this._puntuacion;
+  double get puntuacion => this._puntuacion;
 }

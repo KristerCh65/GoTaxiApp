@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class RetroalimentacionPage extends StatefulWidget {
-  static String id = "Retroalimentacion";
+  RetroalimentacionPage({Key key}) : super(key: key);
 
   @override
   _RetroAlimentacionPageState createState() => _RetroAlimentacionPageState();

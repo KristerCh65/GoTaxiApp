@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gotaxiapp/RegistroVehiculo/RegistroVehiculo.dart';
 import 'package:gotaxiapp/RegistroVehiculo/RegistroVehiculoPage.dart';
-import 'package:gotaxiapp/Retroalimentacion/Retroalimentacion.dart';
 import 'package:gotaxiapp/Retroalimentacion/RetroalimentacionPage.dart';
 import 'package:gotaxiapp/UbicacionUsuario/ubicacion.dart';
 import 'package:gotaxiapp/Usuarios/UsuarioPage.dart';
@@ -16,13 +14,13 @@ class MyApp extends StatelessWidget {
       title: "Login Page",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(visualDensity: VisualDensity.adaptivePlatformDensity),
-      initialRoute: LoginPage.id,
+      initialRoute: 'login',
       routes: <String, WidgetBuilder>{
-        LoginPage.id: (context) => LoginPage(),
-        UsuarioPage.id: (context) => UsuarioPage(),
-        Ubicacion.id: (context) => Ubicacion(),
-        RegistroVehiculoPage.id: (context) => RegistroVehiculoPage(),
-        RetroalimentacionPage.id: (context) => RetroalimentacionPage(),
+        'login': (context) => LoginPage(),
+        'user': (context) => UsuarioPage(),
+        'ubicacion': (context) => Ubicacion(),
+        'registroVehiculo': (context) => RegistroVehiculoPage(),
+        'retroalimentacion': (context) => RetroalimentacionPage(),
       },
     );
   }

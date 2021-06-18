@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class RegistroVehiculoPage extends StatefulWidget {
-  static String id = "Registro Vehiculo ";
+  RegistroVehiculoPage({Key key}) : super(key: key);
   //String marca = 'Marca';
 
   @override
