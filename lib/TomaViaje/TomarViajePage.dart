@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gotaxiapp/UbicacionUsuario/ubicacion.dart';
 
 class TomarViajePage extends StatefulWidget {
-  static String id = "Tomar Viaje";
+  TomarViajePage({Key key}) : super(key: key);
 
   @override
   _TomarViajePageState createState() => _TomarViajePageState();

@@ -257,7 +257,7 @@ class _UsuarioPageState extends State<UsuarioPage> {
         ),
         onPressed: () {
           bloc.registerNewUser();
-          Navigator.pushNamed(context, 'retroalimentacion');
+          Navigator.pushNamed(context, 'conductor');
         });
   }
 }

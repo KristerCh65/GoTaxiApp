@@ -138,7 +138,8 @@ class _LoginPageState extends State<LoginPage> {
           backgroundColor: MaterialStateProperty.all(Colors.amber),
         ),
         onPressed: () {
-          this.submit();
+          //this.submit();
+          Navigator.pushNamed(context, 'tomarviaje');
         });
   }
 

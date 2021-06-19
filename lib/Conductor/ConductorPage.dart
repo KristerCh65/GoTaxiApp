@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gotaxiapp/UbicacionUsuario/ubicacion.dart';
 import 'package:gotaxiapp/TomaViaje/TomarViajePage.dart';
 
 class ConductorPage extends StatefulWidget {
-  static String id = "Conductor";
+  ConductorPage({Key key}) : super(key: key);
 
   @override
   _ConductorPageState createState() => _ConductorPageState();
